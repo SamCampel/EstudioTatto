@@ -15,11 +15,12 @@ public class AgendamentosOp {
 
     Scanner entrada = new Scanner(System.in);
 
-    String nomeCli, imagem, nomeProfissional, formPag, horarioMarcado;
+    String nomeCli, imagem, nomeProfissional, formPag, horarioMarcado, tamanhoEscolhido;
     int cor, pagamento, dia, profissional, tamanho_tattoo, flag_val, horario;
 
     private void nomeCliente() {
         System.out.println("Informe seu nome completo:");
+        entrada.nextLine();
         nomeCli = entrada.nextLine();
     }
 
@@ -36,6 +37,23 @@ public class AgendamentosOp {
                     + "* (5)Cancelar agendamento               *\n");
             tamanho_tattoo = entrada.nextInt();
             if (tamanho_tattoo >= 1 && tamanho_tattoo <= 5) {
+                switch (tamanho_tattoo) {
+                    case 1:
+                        tamanhoEscolhido = "5cm";
+                        break;
+                    case 2:
+                        tamanhoEscolhido = "10cm";
+                        break;
+                    case 3:
+                        tamanhoEscolhido = "15cm";
+                        break;
+                    case 4:
+                        tamanhoEscolhido = "+15cm";
+                        break;
+                    case 5:
+                        tamanhoEscolhido = "Cancelamento de agendamento";
+                        break;
+                }
                 flag_val = 0;
             } else {
                 System.out.println("Opção inválida! Tente novamente.");
@@ -133,7 +151,7 @@ public class AgendamentosOp {
             if (pagamento == 1 || pagamento == 2) {
                 formPag = (pagamento == 1) ? "PIX" : "Cartão Crédito/Débito";
                 flag_val = 0;
-            } else if (cor == 3) {
+            } else if (pagamento == 3) {
                 exibirSair();
             } else {
                 System.out.println("Opção inválida! Tente novamente.");
@@ -148,7 +166,7 @@ public class AgendamentosOp {
     private void exibirMenu() {
         System.out.println("\n*******AGENDAMENTO CONCLUÍDO*******");
         System.out.println("* Nome: " + nomeCli);
-        System.out.println("* Tamanho: " + tamanho_tattoo);
+        System.out.println("* Tamanho: " + tamanhoEscolhido);
         System.out.println("* Cor da tatuagem: " + imagem);
         System.out.println("* Profissional: " + nomeProfissional);
         System.out.println("* Dia do agendamento: " + dia);
@@ -205,6 +223,11 @@ public class AgendamentosOp {
 
         exibirHorarios();
         formasPagamento();
+        if (tamanhoEscolhido.equals("Cancelamento de agendamento") || 
+            horarioMarcado.equals("Cancelamento de agendamento") || 
+            formPag == null) {
+            return;
+        }
         exibirMenu();
     }
 
