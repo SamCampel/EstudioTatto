@@ -20,8 +20,12 @@ public class AgendamentosOp {
 
     private void nomeCliente() {
         System.out.println("Informe seu nome completo:");
-        entrada.nextLine();
         nomeCli = entrada.nextLine();
+    
+        while (nomeCli.isEmpty()) {
+            System.out.println("Digite um nome válido.");
+            nomeCli = entrada.nextLine();
+        }
     }
 
     private void forMulario() {
