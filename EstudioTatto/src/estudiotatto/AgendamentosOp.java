@@ -55,8 +55,8 @@ public class AgendamentosOp {
                         tamanhoEscolhido = "+15cm";
                         break;
                     case 5:
-                        tamanhoEscolhido = "Cancelamento de agendamento";
-                        break;
+                        exibirSair();
+                        return;
                 }
                 flag_val = 0;
             } else {
@@ -98,6 +98,8 @@ public class AgendamentosOp {
             profissional = entrada.nextInt();
             if (profissional >= 1 && profissional <= 3) {
                 flag_val = 0;
+            } else if (profissional == 3) {
+                exibirSair();
             } else {
                 System.out.println("Opção inválida! Tente novamente.");
             }
@@ -133,8 +135,8 @@ public class AgendamentosOp {
                         horarioMarcado = "Das 17:00 as 18:30hrs";
                         break;
                     case 5:
-                        horarioMarcado = "Cancelamento de agendamento";
-                        break;
+                        exibirSair();
+                        return;
                 }
                 flag_val = 0;
             } else {
@@ -180,10 +182,6 @@ public class AgendamentosOp {
     }
 
     private void OpcSPrincipais() {
-        if (tamanho_tattoo == 5) {
-            exibirSair();
-            return;
-        }
 
         OpcCor();
 
@@ -227,11 +225,6 @@ public class AgendamentosOp {
 
         exibirHorarios();
         formasPagamento();
-        if (tamanhoEscolhido.equals("Cancelamento de agendamento") || 
-            horarioMarcado.equals("Cancelamento de agendamento") || 
-            formPag == null) {
-            return;
-        }
         exibirMenu();
     }
 
