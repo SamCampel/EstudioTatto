@@ -56,7 +56,6 @@ public class AgendamentosOp {
                         break;
                     case 5:
                         exibirSair();
-                        return;
                 }
                 flag_val = 0;
             } else {
@@ -80,6 +79,7 @@ public class AgendamentosOp {
                 flag_val = 0;
             } else if (cor == 3) {
                 exibirSair();
+                
             } else {
                 System.out.println("Opção inválida! Tente novamente.");
             }
@@ -136,7 +136,6 @@ public class AgendamentosOp {
                         break;
                     case 5:
                         exibirSair();
-                        return;
                 }
                 flag_val = 0;
             } else {
@@ -167,6 +166,7 @@ public class AgendamentosOp {
 
     private void exibirSair() {
         System.out.println("Saindo do Sistema");
+        System.exit(0);
     }
 
     private void exibirMenu() {
