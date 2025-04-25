@@ -172,7 +172,7 @@ public class AgendamentosOp {
     private void exibirMenu() {
         System.out.println("\n*******AGENDAMENTO CONCLUÍDO*******");
         System.out.println("* Nome: " + nomeCli);
-        System.out.println("* Tamanho: " + tamanhoEscolhido);
+        System.out.println("* Tamanho da tatuagem: " + tamanhoEscolhido);
         System.out.println("* Cor da tatuagem: " + imagem);
         System.out.println("* Profissional: " + nomeProfissional);
         System.out.println("* Dia do agendamento: " + dia);
