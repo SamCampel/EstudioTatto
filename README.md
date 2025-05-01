@@ -1,0 +1,1 @@
+Este repositório foi criado para o desenvolvimento do projeto semestral em grupo da faculdade, no qual estamos aprendendo Programação Orientada a Objetos (POO). Assim que a documentação estiver concluída, ela será disponibilizada aqui.
